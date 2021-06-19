@@ -1,0 +1,42 @@
+button
+{
+  margin: 10px;
+  padding: 5px;
+  display: block;
+}
+input
+{
+  display: block;
+  margin: 10px;
+  padding: 5px;
+}
+.square
+{
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.red-background
+{
+  background-color: red;
+}
+.blue-background
+{
+  background-color: blue;
+}
+
+.first-click
+{
+  background-color: yellow;
+}
+
+.second-click
+{
+  background-color: red;
+}
+
+.third-click
+{
+  background-color: blue;
+}
