@@ -1,0 +1,99 @@
+button
+{
+  margin: 10px;
+  padding: 5px;
+  display: block;
+}
+input
+{
+  display: block;
+  margin: 10px;
+  padding: 5px;
+}
+.square
+{
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.red-background
+{
+  background-color: red;
+}
+.blue-background
+{
+  background-color: blue;
+}
+
+.first-click
+{
+  background-color: yellow;
+}
+
+.second-click
+{
+  background-color: red;
+}
+
+.third-click
+{
+  background-color: blue;
+}
+
+.board
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 80vh;
+  width: 80vh;
+  outline: 1px solid black;
+}
+
+.cell
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.piece
+{
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: cadetblue;
+}
+
+.white-BG
+{
+  background-color: white;
+}
+
+.black-BG
+{
+  background-color: black;
+}
+
+.full
+{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.hollow
+{
+  width: 100px;
+  height: 100px;
+  border: 10px solid blue;
+}
+
+.circle
+{
+  width: 100px;
+  height: 100px;
+  border: 10px solid yellow;
+  border-radius: 50%;
+}

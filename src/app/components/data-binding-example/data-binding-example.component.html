@@ -1,0 +1,87 @@
+<!-- String interpolation -->
+<h1>{{title + ": "+returnHelloWorld()}}</h1>
+<h1>{{retunTitleFunc()}}</h1>
+
+<!-- Propery Binding -->
+<input type="text" [placeholder]="inputPlaceHolder">
+
+<button [disabled]='isButtonDisabled'>
+  button {{isButtonDisabled? 'disabled':'enabled'}}
+</button>
+
+<h2 [innerText]='title'></h2>
+
+<!-- Event Binding -->
+<button (click)="onClickButtonEnable()">{{isButtonDisabled? 'disabled':'enabled'}} + "top button"</button>
+
+<input type="text" placeholder="Enter text" (input)="onInput($event)">
+
+<div (mousemove)="onMouseSqureHover($event)" class="square">
+  x: {{mouseDivX}} y: {{mouseDivY}}
+</div>
+
+
+<!-- 2 way binding -->
+<!-- ngmodel means  title=value and value=title -->
+<input type="text" placeholder="chance title" [(ngModel)]="title">
+
+
+<!-- ngClass -->
+<!-- <button [ngClass]="isButtonDisabled ? 'red-background' : 'blue-backgound'" [disabled]='isButtonDisabled'>
+  button {{isButtonDisabled? 'disabled':'enabled'}}
+</button> -->
+
+<button [disabled]='isButtonDisabled' [ngClass]="buttonClasses">
+  button {{isButtonDisabled? 'disabled':'enabled'}}
+</button>
+
+<button (click)="buttonClickerCounterFunc()" [ngClass]="buttonClickerColorChanger()">
+  Just buttuon
+</button>
+
+<!-- ngIf -->
+<div style="background-color: blue; width: 100px; height: 100px;" *ngIf="!isButtonDisabled"></div>
+
+<input type="text" [ngClass]="isEmailValid ? 'border: 1px solid red' : ''" placeholde12r="please enter your email" (input)="validtionChecker($event)">
+<p *ngIf="!isEmailValid">Invalid email</p>
+
+<!-- ngFOr -->
+<div *ngFor="let person of persons">
+  {{person.name}}
+</div>
+
+<hr>
+
+<input (input)="messageInput($event)" type="text" placeholder="Please enter you message here">
+<button (click)="messageSumbit()">Submit message</button>
+<div *ngIf="emptyMessage">There is no messages</div>
+<div *ngFor="let message of messages">
+  {{message}}
+</div>
+
+<hr>
+
+<select (change)="damkaChangeSelect($event)">
+  <option value="64">8x8 Damka Board</option>
+  <option value="100">10x10 Damka Board</option>
+</select>
+<div [ngSwitch]="damkaSelectValue" class="board">
+  <div class="cell" (click)="piecePutter(i)" *ngFor="let cell of cells; let i=index"  [ngClass]="colorProvider(i) ? 'black-BG':'white-BG'">
+    <div class="piece" *ngIf="cells[i].isPieceExist"></div>
+  </div>
+</div>
+
+
+<!-- ng select  -->
+<select (change)="onChangeSelect($event)">
+  <option value="full">Full squre</option>
+  <option value="hollow">Hollow squre</option>
+  <option value="circle">Circle</option>
+</select>
+<div [ngSwitch]="selectValue">
+  <div class="full" *ngSwitchCase="'full'"></div>
+  <div class="hollow" *ngSwitchCase="'hollow'"></div>
+  <div class="circle" *ngSwitchCase="'circle'"></div>
+</div>
+
+<hr>
