@@ -1,0 +1,4 @@
+<div class="container">
+  <input #messageInput (keyup.enter)="sendMessage(messageInput)" type="text">
+  <button (click)="sendMessage(messageInput)" class="button-send">Send</button>
+</div>
