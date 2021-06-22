@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <h3>Chat room</h3>
-    <app-message *ngFor="let message of messages" [message]="message"></app-message>
+    <app-message (delete)="onDeleteMessage(i)" *ngFor="let message of messages;let i=index" [myUserId]="myUser.id" [message]="message" ></app-message>
   </div>
   <app-chat-room-send-message (message_to_send)="onMessageSend($event)"></app-chat-room-send-message>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Message } from 'src/app/models/message.mode';
 import { User } from 'src/app/models/user.model';
 
@@ -11,6 +11,7 @@ export class ChatRoomMainComponent implements OnInit {
 
   @Input() messages:Message []
   @Input() myUser:User
+
   constructor() { }
 
   ngOnInit(): void {
@@ -18,12 +19,13 @@ export class ChatRoomMainComponent implements OnInit {
 
   onMessageSend(message)
   {
-    console.log(message);
-
-
     this.messages.push({
       user:this.myUser,
       message:message
     })
+  }
+  onDeleteMessage(index)
+  {
+    this.messages.splice(index,1)
   }
 }

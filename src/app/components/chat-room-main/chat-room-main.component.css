@@ -1,8 +1,16 @@
+/* .container
+{
+  width: 100%;
+  min-height: calc(100vh - 4rem);
+  display: grid;
+  grid-template-rows: auto 4rem;
+} */
+
 .container {
   width: 100%;
   min-height: 100%;
   display: grid;
-  /* grid-template-rows: auto 4rem; */
+  grid-template-rows: auto 4rem;
   padding-bottom: 1rem;
 }
 

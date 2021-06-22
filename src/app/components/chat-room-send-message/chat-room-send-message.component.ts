@@ -19,4 +19,6 @@ export class ChatRoomSendMessageComponent implements OnInit {
     this.message_to_send.emit(message.value)
     message.value = ''
   }
+
+
 }
