@@ -11,6 +11,9 @@ export class ChatRoomUsersComponent implements OnInit {
   @Input() users:User[]
   usersToDisplay:User[]
 
+  privateMessageUser:User
+  isPrivateMessage:boolean = false
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,4 +25,14 @@ export class ChatRoomUsersComponent implements OnInit {
     this.usersToDisplay = this.users.filter(user => user.userName.toLowerCase().includes(users))
   }
 
+  onClickUser(index)
+  {
+    this.privateMessageUser = this.users[index]
+    this.isPrivateMessage = true
+  }
+
+  onSendPrivateMessage()
+  {
+    this.isPrivateMessage = false
+  }
 }
