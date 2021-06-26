@@ -1,0 +1,76 @@
+<!-- <h1>{{inputTitle.value}}</h1>
+<input type="text" [formControl]="inputTitle">
+
+<button (click)="onClickButtonDefault()">default</button> -->
+<div class="container">
+  <div class="form">
+    <form [formGroup]="subscribeForm"
+          (ngSubmit)="onSubmitSubscribeForm()">
+      <input class="input-text"
+             placeholder="firstName"
+             type="text"
+             formControlName="firstName">
+      <div class="invalid-message"
+           *ngIf="firstName.touched && firstName.invalid">
+        {{invalidFirstNameMessage()}}
+      </div>
+
+      <input class="input-text"
+             placeholder="secondName"
+             type="text"
+             formControlName="lastName">
+      <div class="invalid-message"
+           *ngIf="lastName.touched && lastName.invalid">
+        You must enter first last name
+      </div>
+
+      <input class="input-text"
+             placeholder="Age"
+             type="number"
+             formControlName="age">
+      <div class="invalid-message"
+           *ngIf="age.touched && age.invalid">
+        {{invalidAgeMessage()}}
+      </div>
+
+      <input class="input-text"
+             placeholder="email"
+             type="text"
+             formControlName="email">
+      <div class="invalid-message"
+           *ngIf="email.touched && email.invalid">
+        You must enter email
+      </div>
+
+      <input class="input-text"
+             placeholder="password"
+             type="password"
+             formControlName="password">
+      <div class="invalid-message"
+           *ngIf="password.touched && password.invalid">
+        {{invalidPasswordMessage()}}
+      </div>
+
+      <input class="input-text"
+             placeholder="Repeat on password"
+             type="password"
+             formControlName="passwordReapeted">
+      <div class="invalid-message"
+           *ngIf="passwordReapeted.touched && (passwordReapeted.invalid || subscribeForm.errors?.passwordnoreapeted===true)">
+        {{invalidPasswordRepeatedMessage()}}
+      </div>
+
+      <input class="inline-block"
+             type="checkbox"
+             formControlName="terms">
+      <div class="inline-block">I read the terms</div>
+      <div class="invalid-message"
+           *ngIf="terms.touched && terms.errors?.required === true">
+        You must agree to the terms
+      </div>
+
+      <button [disabled]="subscribeForm.invalid"
+              class="button">submit</button>
+    </form>
+  </div>
+</div>
