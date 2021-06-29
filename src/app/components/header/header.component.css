@@ -1,12 +1,10 @@
-.header
-{
+.header {
   height: 100%;
   width: 100%;
-  background-color: #446B8B;
+  background-color: #446b8b;
 }
 
-.header_nav
-{
+.header_nav {
   width: 70%;
   height: 100%;
   margin: 0 auto;
@@ -15,14 +13,15 @@
   align-items: center;
 }
 
-a
-{
+a {
   text-decoration: none;
   color: white;
   margin: 0 1rem;
 }
 
-.header_nav_home
-{
+.header_nav_home {
   font-weight: 700;
+}
+.current-loaction {
+  color: yellow;
 }

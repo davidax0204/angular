@@ -1,1 +1,18 @@
-<p>rooms works!</p>
+<div class="container">
+  <div class="section">
+    <div class="headline">rooms</div>
+    <a *ngFor="let name of roomsNames"
+       routerLink="/room/{{name}}">
+      <div class="room">{{name}}</div>
+    </a>
+  </div>
+  <div class="section">
+    <div class="headline">Create new room</div>
+    <input class="input-newroom"
+           #newRoom
+           type="text">
+    <button class="button-newroom"
+            (click)="onClickButton(newRoom.value)">Create</button>
+  </div>
+
+</div>

@@ -1,9 +1,8 @@
-.chat-room
-{
+.chat-room {
   min-height: calc(100vh - 4rem);
   width: 70%;
   margin: 0 auto;
+  margin-top: 4rem;
   display: grid;
   grid-template-columns: 30% 70%;
 }
-

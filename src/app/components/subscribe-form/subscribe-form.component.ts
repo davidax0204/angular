@@ -7,6 +7,7 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-subscribe-form',
@@ -24,7 +25,7 @@ export class SubscribeFormComponent implements OnInit {
   passwordReapeted: AbstractControl;
   terms: AbstractControl;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.subscribeForm = this.fb.group(
@@ -123,6 +124,7 @@ export class SubscribeFormComponent implements OnInit {
   }
 
   onSubmitSubscribeForm() {
-    console.log(this.subscribeForm.get('lastName').value);
+    // console.log(this.subscribeForm.get('lastName').value);
+    this.router.navigate(['/rooms']);
   }
 }

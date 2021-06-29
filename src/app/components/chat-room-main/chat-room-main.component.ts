@@ -5,27 +5,24 @@ import { User } from 'src/app/models/user.model';
 @Component({
   selector: 'app-chat-room-main',
   templateUrl: './chat-room-main.component.html',
-  styleUrls: ['./chat-room-main.component.css']
+  styleUrls: ['./chat-room-main.component.css'],
 })
 export class ChatRoomMainComponent implements OnInit {
+  @Input() messages: Message[];
+  @Input() myUser: User;
+  @Input() roomName;
 
-  @Input() messages:Message []
-  @Input() myUser:User
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  onMessageSend(message)
-  {
+  onMessageSend(message) {
     this.messages.push({
-      user:this.myUser,
-      message:message
-    })
+      user: this.myUser,
+      message: message,
+    });
   }
-  onDeleteMessage(index)
-  {
-    this.messages.splice(index,1)
+  onDeleteMessage(index) {
+    this.messages.splice(index, 1);
   }
 }
